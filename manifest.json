@@ -1,7 +1,10 @@
 {
-  "name": "My PWA",
+  "name": "My PWA Blue",
+  "short_name": "Blue",
   "display": "standalone",
   "start_url": "./",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "icons": [
     {
       "src": "assets/icons/logo.svg",
