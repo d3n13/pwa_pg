@@ -2,25 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PWA PG</title>
-    <link rel="manifest" href="manifest.json" />
+    <title>PWA PG: Vite + React + TS</title>
   </head>
   <body>
-    <h1>I am a PWA PG v3 (Blue)</h1>
-    <script>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/sw.js").then(
-          (registration) => {
-            console.log("Service worker registration succeeded:", registration);
-          },
-          (error) => {
-            console.error(`Service worker registration failed: ${error}`);
-          },
-        );
-      } else {
-        console.error("Service workers are not supported.");
-      }
-    </script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
