@@ -7,6 +7,9 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
+  workbox-core:
+    specifier: ^7.0.0
+    version: 7.0.0
 
 devDependencies:
   "@types/react":
@@ -5611,7 +5614,6 @@ packages:
       {
         integrity: sha512-81JkAAZtfVP8darBpfRTovHg8DGAVrKFgHpOArZbdFd78VqHr5Iw65f2guwjE2NlCFbPFDoez3D3/6ZvhI/rwQ==,
       }
-    dev: true
 
   /workbox-expiration@7.0.0:
     resolution:
