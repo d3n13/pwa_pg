@@ -16,7 +16,10 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "husky:fix-permissions": "chmod ug+x .husky/* && chmod ug+x .git/hooks/*",
-    "format:fix": "prettier --write --ignore-unknown ."
+    "format:write:staged": "lint-staged --allow-empty",
+    "format:write:all": "prettier . --write --ignore-unknown",
+    "format:check:all": "prettier . --check --ignore-unknown",
+    "generate-api-client": "node scripts/generate-api-client.cjs && pnpm format:write:all"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -34,6 +37,7 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
+    "openapi-typescript-codegen": "^0.25.0",
     "prettier": "^3.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
