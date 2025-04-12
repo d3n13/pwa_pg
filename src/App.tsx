@@ -2,13 +2,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import { Link, Route, BrowserRouter, Routes, useParams } from "react-router";
+import { Link, Route, HashRouter, Routes, useParams } from "react-router";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path="/foo"
@@ -54,7 +54,7 @@ function App() {
         ></Route>
         <Route path="*" element={<>Not found</>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
