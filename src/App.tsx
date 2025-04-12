@@ -23,5 +23,5 @@ export function App() {
 
 function IdReaderPage() {
   const { id } = useParams<{ id?: string }>();
-  return <p>id is {id}</p>;
+  return <>id is {id}</>;
 }
