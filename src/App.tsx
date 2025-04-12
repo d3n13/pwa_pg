@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <HashRouter basename="/pwa_pg">
+    <HashRouter basename="/pwa_pg/">
       <Routes>
         <Route
           path="/foo"
