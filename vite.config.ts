@@ -16,7 +16,7 @@ export default defineConfig({
       workbox: {
         clientsClaim: true,
         skipWaiting: true,
-        globPatterns: ["**/*.{js,css,html,ico,png,svg,mp3}"], // For precaching files (from public folder?)
+        globPatterns: ["**/*.{js,css,html,ico,png,mp3}"], // For precaching files (from public folder?)
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -73,4 +73,5 @@ export default defineConfig({
       },
     }),
   ],
+  base: "/pwa_pg/",
 });
