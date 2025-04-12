@@ -5,14 +5,17 @@ import { VitePWA } from "vite-plugin-pwa";
 const navigateFallbackAllowlist = [/./];
 const oneYearInSeconds = 60 * 60 * 24 * 365;
 
+const base = "/pwa_pg/";
+
 // https://vite.dev/config/
 export default defineConfig({
+  base,
   plugins: [
     react(),
     VitePWA({
       registerType: "autoUpdate",
       injectRegister: "auto",
-      base: "/pwa_pg/",
+      base,
       workbox: {
         clientsClaim: true,
         skipWaiting: true,
@@ -47,7 +50,7 @@ export default defineConfig({
             },
           },
         ],
-        navigateFallback: "/index.html",
+        navigateFallback: `${base}index.html`,
         navigateFallbackAllowlist,
         navigateFallbackDenylist: [
           /\./, // Something with a dot. Likely a file
@@ -73,5 +76,4 @@ export default defineConfig({
       },
     }),
   ],
-  base: "/pwa_pg/",
 });
