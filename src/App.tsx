@@ -4,7 +4,7 @@ import "./App.css";
 
 export function App() {
   return (
-    <HashRouter basename="/pwa_pg/">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<CommonLayout />}>
           <Route index element={<>This is an index Route</>} />
