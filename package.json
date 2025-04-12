@@ -4,46 +4,48 @@
   "version": "0.0.0",
   "type": "module",
   "engines": {
-    "node": "^20",
+    "node": "^22",
     "pnpm": "^10"
   },
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepare": "husky install",
-    "husky:fix-permissions": "chmod ug+x .husky/* && chmod ug+x .git/hooks/*",
-    "format:write:staged": "lint-staged --allow-empty",
+    "prepare": "husky",
+    "lint-format-staged-files": "lint-staged --allow-empty",
     "format:write:all": "prettier . --write --ignore-unknown",
     "format:check:all": "prettier . --check --ignore-unknown",
-    "generate-api-client": "node scripts/generate-api-client.cjs && pnpm format:write:all"
+    "lint:fix": "eslint . --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write",
+    "*.ts, *.tsx": "eslint --fix --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router": "^7.5.0",
-    "workbox-core": "^7.0.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.5.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "@vitejs/plugin-react": "^4.0.3",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.0.2",
-    "openapi-typescript-codegen": "^0.25.0",
-    "prettier": "^3.0.3",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.5",
-    "vite-plugin-pwa": "^0.16.5",
-    "vitest": "^0.34.6"
+    "@eslint/js": "^9.21.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.21.0",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^15.15.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
+    "prettier": "3.5.3",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.24.1",
+    "vite": "^6.2.0",
+    "vite-plugin-pwa": "^1.0.0",
+    "vitest": "^3.1.1"
   },
   "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
 }
