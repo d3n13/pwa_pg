@@ -9,6 +9,7 @@ export default defineConfig({
     react(),
     VitePWA({
       srcDir: "src",
+      base: "/pwa_pg",
       filename: "sw.ts",
       registerType: "autoUpdate",
       devOptions: {
